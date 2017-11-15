@@ -14,8 +14,17 @@ A modern vanilla js app.
 - webpack for development server and module compilation for production distribution
 - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) to generate a html page that includes the app without the need for separate server
 - husky for hooks ( i.e. to run tests before committing)
+- PostCss for nextcss future and sass like features etc. https://www.bignerdranch.com/blog/postcss-life-after-sass/
+- Css grids!  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 
 
+
+
+## About
+
+Checkout the [design_notes.md](design_notes.md)
+
+For methodology and roadmap
 
 ## Usage
 
@@ -44,4 +53,3 @@ Production build
 ```
 yarn prod:build
 ```
-

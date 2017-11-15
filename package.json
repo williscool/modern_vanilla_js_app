@@ -33,6 +33,7 @@
     "jest": "^21.2.1",
     "postcss": "^6.0.14",
     "postcss-cssnext": "^3.0.2",
+    "postcss-hexrgba": "^1.0.0",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "precss": "^2.0.0",
@@ -47,8 +48,8 @@
     "babel-polyfill": "^6.26.0"
   },
   "browserslist": [
-    "last 1 versions",
-    "not ie < 11",
+    "> 1%",
+    "not ie <= 11",
     "safari >= 10",
     "ios >= 8"
   ]
