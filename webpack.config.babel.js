@@ -1,7 +1,12 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-import { WDS_PORT, STATIC_PATH, APP_NAME, APP_CONTAINER_CLASS } from './src/config';
+import { WDS_PORT,
+  STATIC_PATH,
+  APP_NAME,
+  APP_CONTAINER_CLASS,
+} from './src/config';
+
 import { isProd } from './src/util';
 
 export default {
@@ -25,6 +30,10 @@ export default {
           { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
           { loader: 'postcss-loader', options: { sourceMap: true } },
         ],
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader',
       },
     ],
   },

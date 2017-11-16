@@ -2,33 +2,38 @@
 
 
 
+## application components
+
+- gallery (just has gallery items)
+- gallery items (has an image and a title)
+- lightbox (takes an image in and displays it)
+
+
+
 ## p0
 
-- use css animations to get the lightbox working https://codepen.io/designcouch/pen/DEkcf
-- light box when photo clicked (just need to animate the css to the demisions of the thing based on the size of the viewport)  https://codepen.io/designcouch/pen/DEkcf
 - add ability to move to the next / previous photos and display the photo title.
 - wire up fetch to the api (maybe put this part of the app in an app folder)
+- Update the UI of a page without refreshing (see more, and search for another type, maybe 300 ~ms after keystroke)
 - photos from an api (hard code to something pretty like islands "", maybe use graphql make that p1 if it takes more than15 mins to figure out)  
 - cross browser testing (Your submission must run without errors in the latest versions of Chrome, Safari, Firefox, and Edge.)
+- unit testing ( try adding flow typing at this stage if you can get it working in less than 10 mins)
 - acceptance testing with phantomjs or what not
-
-- Update the UI of a page without refreshing (see more, and search for another type, maybe 300 ~ms after keystroke)
-- Build a polished user experience you'd be proud to ship (lint, test [acceptance at least], doc, etc.)
 
 ## p1
 
 - tracking (for view count, how many times they scroll the infinite scroll, buttons clicked, images moused over or whatever stuff you can think to track. pusedocode sending it to api. just console .log it out	)
 - instrument user timing to measure performance of the app https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
 - get deployment working (prod build assets and host them on some static asset place)
-- you can search for whatever type of photos you want
-- flow typing
-- https://developers.google.com/web/fundamentals/web-components/shadowdom
+- ​
 
 
 
 
 ## p2 (things I would do in the future)
 
+- you can search for whatever type of photos you want
+- https://developers.google.com/web/fundamentals/web-components/shadowdom
 - infinite scroll
 - viewport tracking (you could see how many and what pictures a user actually saw)
 - minification of css, js, html
@@ -69,6 +74,9 @@ there are a good other clarifying questions I would ask if this were a large app
 - use css grids (or flexbox) and some hard coded images to get the grid working  grid (want this to be css grid or will fallback to flexbox)
 - explain why I chose the tech that I chose (why postcss, why other stuff?)
 - make sure to drop ie from browselist configs (babel and package.json)
+- use css animations to get the lightbox working https://codepen.io/designcouch/pen/DEkcf
+- light box when photo clicked (just need to animate the css to the demisions of the thing based on the size of the viewport)  https://codepen.io/designcouch/pen/DEkcf
+- Build a polished user experience you'd be proud to ship  (from the UI side)
 
 
 
@@ -93,4 +101,7 @@ there are a good other clarifying questions I would ask if this were a large app
 - https://codepen.io/ramenhog/pen/MpORPa
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:target
 - https://developer.mozilla.org/en-US/docs/Web/CSS/:focus
+- https://github.com/tastejs/todomvc/blob/master/examples/vanilla-es6
+- https://stackoverflow.com/questions/10305365/javascript-chrome-how-to-copy-an-object-from-the-webkit-inspector-as-code
+- https://stackoverflow.com/questions/27993124/generating-html-tags-through-vanilla-javascript
 

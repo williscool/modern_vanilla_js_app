@@ -1,4 +1,4 @@
-# Photos App - Technical Exercise from Slack
+# VanillaJs Photo Gallery - A Technical Exercise 
 
 A modern vanilla js app.
 
