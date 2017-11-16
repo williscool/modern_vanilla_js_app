@@ -8,7 +8,7 @@ describe('Template', () => {
     sizeClass: 'large',
   });
 
-  const testHTML = `<div class="${item.cssClasses()}">
+  const testHTML = `<div class="${item.cssClasses()}" data-image-css-url="${item.backgroundImage()}">
   <div class="item__details">
     ${item.desc}
   </div>

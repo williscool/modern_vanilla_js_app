@@ -3,7 +3,8 @@
  *
  * @param {string} selector Selector to query
  * @param {Element} [scope] Optional scope element for the selector
- * @return {Function} querySelector
+ *
+ * @returns {Element} either the element or undefined if not found
  */
 export function qs(selector, scope) {
   return (scope || document).querySelector(selector);
@@ -26,7 +27,7 @@ export function $on(target, type, callback, capture) {
  *
  * @param {Element} target Element which the event must bubble to
  * @param {string} selector Selector to match
- * @param {string} type Event name
+ * @param {string} type Event type i.e. "click"
  * @param {Function} handler Function called when the event bubbles to target
  *                           from an element matching selector
  * @param {boolean} [capture] Capture the event
@@ -49,11 +50,33 @@ export function $delegate(target, selector, type, handler, capture) {
 }
 
 /**
- * Encode less-than and ampersand characters with entity codes to make user-
- * provided text safe to parse as HTML.
+ * Watch for addtions of matching node types
  *
- * @param {string} s String to escape
+ * TODO:
+ * answer this for 2017 now that matches is widely supported you can use that
+ * https://stackoverflow.com/questions/9778962/handler-for-dynamically-created-dom-nodes-as-they-are-inserted
  *
- * @returns {string} String with unsafe characters escaped with entity codes
+ * https://caniuse.com/#search=matches
+ *
+ * @export
+ * @param {Element} target root element to observe from
+ * @param {any} selector dom selector for node
+ * @param {any} callback callback to run on add back
  */
-export const escapeForHTML = s => s.replace(/[&<]/g, c => (c === '&' ? '&amp;' : '&lt;'));
+export function $observeAdditions(target, selector, callback) {
+  const observer = new MutationObserver(((mutations) => {
+    mutations.forEach((mutation) => {
+      const nodes = [...mutation.addedNodes];
+      nodes.filter(node => node instanceof HTMLElement && node.matches(selector)).forEach((node) => {
+        callback(node);
+      });
+    });
+  }));
+
+  observer.observe(target, {
+    childList: true,
+    subtree: true,
+    attributes: false,
+    characterData: false,
+  });
+}

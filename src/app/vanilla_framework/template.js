@@ -14,7 +14,7 @@ import itemTemplate from '../templates/item.html';
  */
 class Template {
   static parseTemplate(str, data) {
-    return str.replace(/\$\{(.+)}/gi, (match, parensMatch) => {
+    return str.replace(/\${(.+?)}/gi, (match, parensMatch) => {
       if (data[parensMatch] !== undefined) {
         return data[parensMatch];
       }
@@ -34,6 +34,7 @@ class Template {
     return Template.parseTemplate(itemTemplate, {
       'item.cssClasses': item.cssClasses(),
       'item.desc': item.desc,
+      'item.backgroundImage': item.backgroundImage(),
     });
   }
 

@@ -1,7 +1,9 @@
 
 import Template from './template';
-import { qs } from './helpers';
+import Lightbox from './services/lightbox';
+import { qs, $delegate, $observeAdditions } from './utils';
 import {
+  ITEM_SELECTOR,
   GRID_SELECTOR,
 } from '../../config';
 
@@ -14,6 +16,37 @@ import {
 class View {
   constructor() {
     this.$container = qs(GRID_SELECTOR);
+    this.lbService = new Lightbox();
+
+    this.attachImagestoGallery();
+    this.attachLightboxToGalleryImages();
+  }
+
+  /**
+   * add the images to the gallery as they come into the dom
+   *
+   * @memberof View
+   */
+  attachImagestoGallery() {
+    $observeAdditions(this.$container, ITEM_SELECTOR, (el) => {
+      const cssBgImgUrl = el.getAttribute('data-image-css-url');
+      el.style.backgroundImage = cssBgImgUrl; // eslint-disable-line no-param-reassign
+    });
+  }
+
+  /**
+   * open the lightbox with the images
+   *
+   * @memberof View
+   */
+  attachLightboxToGalleryImages() {
+    $delegate(this.$container, ITEM_SELECTOR, 'click', (target) => {
+      const el = target.srcElement;
+      const cssBgImgUrl = el.getAttribute('data-image-css-url');
+
+      this.lbService.setLightboxBgImageCss(cssBgImgUrl);
+      this.lbService.enable();
+    });
   }
 
   showItems(items) {

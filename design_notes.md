@@ -105,4 +105,8 @@ there are a good other clarifying questions I would ask if this were a large app
 - https://github.com/tastejs/todomvc/blob/master/examples/vanilla-es6
 - https://stackoverflow.com/questions/10305365/javascript-chrome-how-to-copy-an-object-from-the-webkit-inspector-as-code
 - https://stackoverflow.com/questions/27993124/generating-html-tags-through-vanilla-javascript
+- https://github.com/jantimon/html-webpack-plugin/blob/version-3.x/migration.md
+- https://github.com/jonschlinkert/placeholders
+- https://github.com/whatwg/dom/issues/77
+- https://stackoverflow.com/questions/35065355/equivalent-of-domnodeinserted-domnoderemoved-with-mutationobserver
 

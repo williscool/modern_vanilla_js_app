@@ -1,31 +1,7 @@
-import {
-  ITEM_SELECTOR,
-  LIGHTBOX_CONTAINER_SELECTOR,
-} from '../config';
 
 import Store from './vanilla_framework/services/store';
 import View from './vanilla_framework/view';
 import Controller from './vanilla_framework/controller';
-
-const lbEl = document.querySelector(LIGHTBOX_CONTAINER_SELECTOR);
-const photoItems = document.querySelectorAll(ITEM_SELECTOR);
-
-photoItems.forEach((el) => {
-  el.addEventListener('click', () => {
-    lbEl.querySelector('.lbwojs-img').style.backgroundImage = window.getComputedStyle(el).backgroundImage;
-
-    lbEl.classList.add('enabled');
-  });
-});
-
-lbEl.addEventListener('click', () => {
-  lbEl.classList.remove('enabled');
-});
-
-// TODO: refactor the lightbox showing out into a service should have a show and hide method I shouldn't be doing the enabling manually
-
-const store = new Store();
-const view = new View();
 
 /**
  *  here we start a controller that will orchestrate the view
@@ -33,9 +9,14 @@ const view = new View();
  *
  * This is launched after DOMContentLoaded so we know that we can mess with the dom
  *
+ * a nice theme you will see throughout the app over the todoMVC version
+ * is not needing to do a bunch of .bind calls because arrow functions
+ *
  * @export App
  */
 export default function () {
+  const store = new Store();
+  const view = new View();
   const controller = new Controller(store, view);
 
   // only really one view in this application

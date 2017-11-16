@@ -28,7 +28,7 @@ class Store {
    */
   getAllItems() {
     // io === item object
-    return this.items.map(io => new Item({ imageUrl: io.imgsrc, desc: io.desc, sizeClass: io.sizeClass }));
+    return this.items.map(io => new Item({ imageUrl: io.imgSrc, desc: io.desc, sizeClass: io.sizeClass }));
   }
 }
 

@@ -33,6 +33,7 @@ export default {
       },
       {
         test: /\.html$/,
+        exclude: /index\.html$/, // need to exclude the base template so that HTMLWebpackPlugin can pick it up
         loader: 'html-loader',
       },
     ],

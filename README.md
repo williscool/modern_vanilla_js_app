@@ -16,6 +16,7 @@ A modern vanilla js app.
 - husky for hooks ( i.e. to run tests before committing)
 - PostCss for nextcss future and sass like features etc. https://www.bignerdranch.com/blog/postcss-life-after-sass/
 - Css grids!  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+- Mutation Observer
 
 
 
