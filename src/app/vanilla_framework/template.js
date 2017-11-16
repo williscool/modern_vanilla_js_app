@@ -38,7 +38,7 @@ class Template {
   }
 
   /**
-   * Takes a list of items and returns the html for it
+   * Takes a list of items and returns the html them together
    *
    * @memberof Template
    * @param {Object} items the item to get html for

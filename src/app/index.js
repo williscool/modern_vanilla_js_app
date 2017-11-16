@@ -3,36 +3,9 @@ import {
   LIGHTBOX_CONTAINER_SELECTOR,
 } from '../config';
 
-/*
-import Template from './vanilla_framework/template';
-import View from './vanilla_framework/view';
 import Store from './vanilla_framework/services/store';
-*/
-
-// import { $on, $delegate } from './app/helpers';
-
-// TODO: refactor these out into item objects
-
-// TODO: this should have a show and hide method I shouldn't be doing the enabling manually
-
-// here I need to start a controller that will orchestrate the view
-
-// the controller should say do a thing and the view should update based on that
-
-// use insertAdjacentHTML to add the photo into the dom
-
-// we can have .grid be the root that the app lives in
-
-// then we can just
-
-// add api data, do 1 or 2 unit tests for items, do an acceptance test and we are done
-
-/*
-const store = new Store();
-
-const template = new Template();
-const view = new View(template);
-*/
+import View from './vanilla_framework/view';
+import Controller from './vanilla_framework/controller';
 
 const lbEl = document.querySelector(LIGHTBOX_CONTAINER_SELECTOR);
 const photoItems = document.querySelectorAll(ITEM_SELECTOR);
@@ -48,3 +21,23 @@ photoItems.forEach((el) => {
 lbEl.addEventListener('click', () => {
   lbEl.classList.remove('enabled');
 });
+
+// TODO: refactor the lightbox showing out into a service should have a show and hide method I shouldn't be doing the enabling manually
+
+const store = new Store();
+const view = new View();
+
+/**
+ *  here we start a controller that will orchestrate the view
+ *  the controller should say do a thing and the view should update based on that
+ *
+ * This is launched after DOMContentLoaded so we know that we can mess with the dom
+ *
+ * @export App
+ */
+export default function () {
+  const controller = new Controller(store, view);
+
+  // only really one view in this application
+  controller.initView();
+}

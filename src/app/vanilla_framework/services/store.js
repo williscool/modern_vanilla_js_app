@@ -13,7 +13,7 @@ class Store {
 
     // this will be more useful when we are getting the items from the api
     // we will not invoke it until the items populated from the api
-    callback();
+    if (callback) callback();
   }
 
   /**

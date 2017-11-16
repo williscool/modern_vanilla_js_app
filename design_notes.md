@@ -16,6 +16,7 @@
 - wire up fetch to the api (maybe put this part of the app in an app folder)
 - Update the UI of a page without refreshing (see more, and search for another type, maybe 300 ~ms after keystroke)
 - photos from an api (hard code to something pretty like islands "", maybe use graphql make that p1 if it takes more than15 mins to figure out)  
+- pass the constants into the html builder config
 - cross browser testing (Your submission must run without errors in the latest versions of Chrome, Safari, Firefox, and Edge.)
 - unit testing ( try adding flow typing at this stage if you can get it working in less than 10 mins)
 - acceptance testing with phantomjs or what not

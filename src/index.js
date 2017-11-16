@@ -24,5 +24,5 @@ import App from './app';
 document.addEventListener('DOMContentLoaded', () => {
   // setting window.app is a pretty standard convienece thing people do
   // TODO: change this to new once its an object
-  window.app = App;
+  window.app = App();
 });

@@ -6,32 +6,30 @@
   <title>${htmlWebpackPlugin.options.title}</title>
 </head>
 
-<body>
+  <body>
+    <div class="message ${htmlWebpackPlugin.options.templateVariables.containerClassName}">
+      Sorry, your browser does not support CSS Grid. 😅 :D
+    </div>
 
-  <div class="message ${htmlWebpackPlugin.options.templateVariables.containerClassName}">
-    Sorry, your browser does not support CSS Grid. 😅 :D
-  </div>
-
-  <section class="section">
-    <h1>${htmlWebpackPlugin.options.title}</h1>
-    <div class="grid">
-      <div class="item">
-        <div class="item__details">
-          jelly-o brownie sweet
+    <section class="section">
+      <h1>${htmlWebpackPlugin.options.title}</h1>
+      <div class="grid">
+        <div class="item">
+          <div class="item__details">
+            jelly-o brownie sweet
+          </div>
         </div>
       </div>
-    </div>
-    </div>
 
-    <div class="lbwojs">
-      <div class="lbwojs-effect">
-        <div class="lbwojs-img-container">
-          <div class="lbwojs-img" style="background-image:url(http://images.fandango.com/images/fandangoblog/GOTG_Bus%20Shelter_Gamora_v6a_lg.jpg)"></div>
-          <!-- background-image for lazy loading -->
+      <div class="lbwojs">
+        <div class="lbwojs-effect">
+          <div class="lbwojs-img-container">
+            <div class="lbwojs-img" style="background-image:url(http://images.fandango.com/images/fandangoblog/GOTG_Bus%20Shelter_Gamora_v6a_lg.jpg)"></div>
+            <!-- background-image for lazy loading -->
+          </div>
         </div>
       </div>
-    </div>
 
-</body>
+  </body>
 
 </html>
