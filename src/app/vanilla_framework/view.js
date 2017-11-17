@@ -41,10 +41,10 @@ class View {
    */
   attachLightboxToGalleryImages() {
     $delegate(this.$container, ITEM_SELECTOR, 'click', (target) => {
-      const el = target.srcElement;
-      const cssBgImgUrl = el.getAttribute('data-image-css-url');
+      const el = target;
+      const itemIndex = el.getAttribute('data-item-id');
 
-      this.lbService.setLightboxBgImageCss(cssBgImgUrl);
+      this.lbService.setLightboxItemToIndex(itemIndex);
       this.lbService.enable();
     });
   }

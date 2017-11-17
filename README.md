@@ -25,7 +25,9 @@ A modern vanilla js app.
 
 Checkout the [design_notes.md](design_notes.md)
 
-For methodology and roadmap
+For methodology, roadmap, trade off, sources, and thoughts.
+
+
 
 ## Usage
 

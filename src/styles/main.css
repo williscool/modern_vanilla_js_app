@@ -159,7 +159,7 @@ $easeOutCirc : cubic-bezier(0.075, 0.82, 0.165, 1);
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1337;
+  z-index: 5;
   background: rgba(#000, 0.75);
   opacity: 0;
   visibility: hidden;
@@ -195,6 +195,7 @@ $easeOutCirc : cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
   .lbwojs-img {
+    transition: background-image 1.2s ease-out;
     position: absolute;
     top: 0;
     left: 0;
@@ -239,4 +240,64 @@ $easeOutCirc : cubic-bezier(0.075, 0.82, 0.165, 1);
   .lbwojs-effect {
     transform: translateY(0) scale(1) rotateX(0);
   }
+}
+
+/* svg arrow stuff */
+
+button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+svg {
+  padding: 5px;
+}
+
+.arrow {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  margin-top: -45px;
+  margin-left: -35px;
+  width: 70px;
+  height: 90px;
+}
+
+.left {
+  left: 10%;
+}
+
+.right {
+  left: 90%;
+}
+
+.left:hover polyline,
+.left:focus polyline {
+  stroke-width: 3;
+}
+
+.left:active polyline {
+  stroke-width: 6;
+  transition: all 100ms ease-in-out;
+}
+
+.right:hover polyline,
+.right:focus polyline {
+  stroke-width: 3;
+}
+
+.right:active polyline {
+  stroke-width: 6;
+  transition: all 100ms ease-in-out;
+}
+
+polyline {
+  transition: all 250ms ease-in-out;
+}
+
+.hide {
+  display: none;
 }

@@ -13,6 +13,15 @@ import itemTemplate from '../templates/item.html';
  * @class Template
  */
 class Template {
+  /**
+   * Parse the template add the data.
+   *
+   * @static
+   * @param {any} str input string
+   * @param {any} data data to put in string
+   * @returns {string} interpolated template string
+   * @memberof Template
+   */
   static parseTemplate(str, data) {
     return str.replace(/\${(.+?)}/gi, (match, parensMatch) => {
       if (data[parensMatch] !== undefined) {
@@ -28,10 +37,12 @@ class Template {
    *
    * @memberof Template
    * @param {Object} item the item to get html for
+   * @param {number} index the index order in which this item appears
    * @returns {string} html
    */
-  static itemHTML(item) {
+  static itemHTML(item, index) {
     return Template.parseTemplate(itemTemplate, {
+      index,
       'item.cssClasses': item.cssClasses(),
       'item.desc': item.desc,
       'item.backgroundImage': item.backgroundImage(),
@@ -48,7 +59,7 @@ class Template {
   static itemListHTML(items) {
     // this is slightly complicated by the fact that on the first iteration accumulator is nothing.
     // so we just set it to an empty string
-    return items.map(i => Template.itemHTML(i)).join('');
+    return items.map((item, index) => Template.itemHTML(item, index)).join('');
   }
 }
 

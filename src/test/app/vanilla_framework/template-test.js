@@ -8,18 +8,16 @@ describe('Template', () => {
     sizeClass: 'large',
   });
 
-  const testHTML = `<div class="${item.cssClasses()}" data-image-css-url="${item.backgroundImage()}">
-  <div class="item__details">
-    ${item.desc}
-  </div>
-</div>
-`;
-
   it('should create item html', () => {
-    expect(Template.itemHTML(item)).toBe(testHTML);
+    expect(Template.itemHTML(item)).toContain(item.cssClasses());
+    expect(Template.itemHTML(item)).toContain(item.desc);
+    expect(Template.itemHTML(item)).toContain(item.backgroundImage());
   });
 
   it('should create item list html', () => {
-    expect(Template.itemListHTML([item, item, item])).toBe(testHTML + testHTML + testHTML);
+    // https://stackoverflow.com/questions/43390873/template-literal-inside-of-the-regex
+    const testHTML = Template.itemListHTML([item, item, item]);
+    expect(testHTML.match(new RegExp(item.cssClasses(), 'gi')).length).toBe(3);
+    expect(testHTML.match(new RegExp(item.desc, 'gi')).length).toBe(3);
   });
 });

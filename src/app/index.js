@@ -14,11 +14,27 @@ import Controller from './vanilla_framework/controller';
  *
  * @export App
  */
-export default function () {
-  const store = new Store();
-  const view = new View();
-  const controller = new Controller(store, view);
 
-  // only really one view in this application
-  controller.initView();
+class App {
+  constructor() {
+    return this;
+  }
+
+  init() {
+    // this is the  central place to find other objects in the system
+    // this could be its own class object
+    this.registry = {};
+
+    const store = new Store();
+    this.registry.store = store;
+
+    const view = new View();
+
+    const controller = new Controller(store, view);
+    this.registry.controller = controller;
+    // only really one view in this application
+    this.registry.controller.initView();
+  }
 }
+
+export default App;

@@ -1,38 +1,24 @@
 # Photos App
 
-
-
-## application components
-
-- gallery (just has gallery items)
-- gallery items (has an image and a title)
-- lightbox (takes an image in and displays it)
-
-
-
 ## p0
 
-- add ability to move to the next / previous photos and display the photo title.
 - wire up fetch to the api (maybe put this part of the app in an app folder)
-- Update the UI of a page without refreshing (see more, and search for another type, maybe 300 ~ms after keystroke)
-- photos from an api (hard code to something pretty like islands "", maybe use graphql make that p1 if it takes more than15 mins to figure out)  
-- pass the constants into the html builder config
+- Update the UI of a page without refreshing (first just add more on load, then if it takes less than 10 make a see more)
+- make all selectors constants pass the constants into the html builder config
 - cross browser testing (Your submission must run without errors in the latest versions of Chrome, Safari, Firefox, and Edge.)
-- unit testing ( try adding flow typing at this stage if you can get it working in less than 10 mins)
-- acceptance testing with phantomjs or what not
 
 ## p1
 
-- tracking (for view count, how many times they scroll the infinite scroll, buttons clicked, images moused over or whatever stuff you can think to track. pusedocode sending it to api. just console .log it out	)
-- instrument user timing to measure performance of the app https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
-- get deployment working (prod build assets and host them on some static asset place)
-- ​
+- acceptance testing with phantomjs or what not (just need one. hit page -> click first image -> check that lightbox is shown)
+- get deployment working (prod build assets and host them on some static asset place)  (need to send them it hosted. delete this though)
 
-
+  ​
 
 
 ## p2 (things I would do in the future)
 
+- tracking (for view count, how many times they scroll the infinite scroll, buttons clicked, images moused over or whatever stuff you can think to track. pusedocode sending it to api. just console .log it out)
+- instrument user timing to measure performance of the app https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
 - you can search for whatever type of photos you want
 - https://developers.google.com/web/fundamentals/web-components/shadowdom
 - infinite scroll
@@ -57,12 +43,20 @@
 there are a good other clarifying questions I would ask if this were a large application that was going out to lots of people but are certainly overkill for this project i.e.
 
 - what would be the performance requirements
--  maximum size the initial payload of the app should be
+- maximum size the initial payload of the app should be
 - server side rendering?
 
 
 
 ## done
+
+### application components
+
+- gallery (just has gallery items)
+- gallery items (has an image and a title)
+- lightbox (takes an image in and displays it)
+
+
 
 ### p0
 
@@ -78,6 +72,8 @@ there are a good other clarifying questions I would ask if this were a large app
 - use css animations to get the lightbox working https://codepen.io/designcouch/pen/DEkcf
 - light box when photo clicked (just need to animate the css to the demisions of the thing based on the size of the viewport)  https://codepen.io/designcouch/pen/DEkcf
 - Build a polished user experience you'd be proud to ship  (from the UI side)
+- photos from an api (hard code to something pretty like islands "", maybe use graphql make that p1 if it takes more than15 mins to figure out)  
+- unit testing ( try adding flow typing at this stage if you can get it working in less than 10 mins)
 
 
 
@@ -109,4 +105,5 @@ there are a good other clarifying questions I would ask if this were a large app
 - https://github.com/jonschlinkert/placeholders
 - https://github.com/whatwg/dom/issues/77
 - https://stackoverflow.com/questions/35065355/equivalent-of-domnodeinserted-domnoderemoved-with-mutationobserver
+- https://codepen.io/deanleigh/pen/GgJNNR
 

@@ -40,7 +40,7 @@ export function $delegate(target, selector, type, handler, capture) {
 
     while (i--) { // eslint-disable-line no-plusplus
       if (potentialElements[i] === targetElement) {
-        handler.call(targetElement, event);
+        handler(targetElement, event);
         break;
       }
     }
