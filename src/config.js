@@ -1,7 +1,8 @@
 export const WDS_PORT = 7000;
 export const APP_NAME = 'Modern Vanilla JS Photos App';
 
-export const STATIC_PATH = '/static';
+// files are in root on netlify
+export const STATIC_PATH = '';
 
 export const GRID_CLASS = 'grid';
 export const ITEM_CLASS = 'item';
