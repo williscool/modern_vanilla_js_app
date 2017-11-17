@@ -20,6 +20,7 @@
 - tracking (for view count, how many times they scroll the infinite scroll, buttons clicked, images moused over or whatever stuff you can think to track. pusedocode sending it to api. just console .log it out)
 - instrument user timing to measure performance of the app https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
 - you can search for whatever type of photos you want
+- refactor everything to use promises instead of callbacks
 - https://developers.google.com/web/fundamentals/web-components/shadowdom
 - infinite scroll
 - viewport tracking (you could see how many and what pictures a user actually saw)
@@ -106,4 +107,7 @@ there are a good other clarifying questions I would ask if this were a large app
 - https://github.com/whatwg/dom/issues/77
 - https://stackoverflow.com/questions/35065355/equivalent-of-domnodeinserted-domnoderemoved-with-mutationobserver
 - https://codepen.io/deanleigh/pen/GgJNNR
+- https://davidwalsh.name/fetch
+- https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
+- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 

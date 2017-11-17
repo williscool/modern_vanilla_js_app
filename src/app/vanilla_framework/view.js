@@ -50,8 +50,11 @@ class View {
   }
 
   showItems(items) {
-    // use insertAdjacentHTML to add the photos into the dom
-    this.$container.insertAdjacentHTML('beforeend', Template.itemListHTML(items));
+    // used to insertAdjacentHTML to add the photos into the dom
+    // this.$container.insertAdjacentHTML('beforeend', Template.itemListHTML(items));
+
+    // now uses innerhtml since they will get updated by api
+    this.$container.innerHTML = Template.itemListHTML(items);
   }
 }
 

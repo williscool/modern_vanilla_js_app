@@ -54,12 +54,13 @@ class Template {
    *
    * @memberof Template
    * @param {Object} items the item to get html for
+   * @param {number} [indexOffset=0] number of images already in gallery
    * @returns {string} html
    */
-  static itemListHTML(items) {
+  static itemListHTML(items, indexOffset = 0) {
     // this is slightly complicated by the fact that on the first iteration accumulator is nothing.
     // so we just set it to an empty string
-    return items.map((item, index) => Template.itemHTML(item, index)).join('');
+    return items.map((item, index) => Template.itemHTML(item, index + indexOffset)).join('');
   }
 }
 
