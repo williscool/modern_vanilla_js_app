@@ -1,13 +1,8 @@
 # Photos App
 
-## p0
 
-- cross browser testing (Your submission must run without errors in the latest versions of Chrome, Safari, Firefox, and Edge.)
-- make all selectors constants pass the constants into the html builder config
 
 ## p1
-
-- acceptance testing with phantomjs or what not (just need one. hit page -> click first image -> check that lightbox is shown)
 
 - get deployment working (prod build assets and host them on some static asset place)  (need to send them it hosted. delete this though)
 
@@ -18,6 +13,7 @@
 
 ## p2 (things I would do in the future)
 
+- make all selectors constants pass the constants into the html builder config
 - tracking (for view count, how many times they scroll the infinite scroll, buttons clicked, images moused over or whatever stuff you can think to track. pusedocode sending it to api. just console .log it out)
 - instrument user timing to measure performance of the app https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API
 - you can search for whatever type of photos you want
@@ -29,6 +25,7 @@
 - graphql api
 - get prettier working on save with https://github.com/prettier/prettier-vscode ( save us having to hand fix everything to pass the linter)
 - https://github.com/lettertwo/appcache-webpack-plugin
+- automated browser testing http://nightwatchjs.org/
 
 
 ## clarify
@@ -78,7 +75,12 @@ there are a good other clarifying questions I would ask if this were a large app
 - unit testing ( try adding flow typing at this stage if you can get it working in less than 10 mins)
 - wire up fetch to the api (maybe put this part of the app in an app folder)
 - Update the UI of a page without refreshing (first just add more on load, then if it takes less than 10 make a see more)
+- cross browser testing (Your submission must run without errors in the latest versions of Chrome, Safari, Firefox, and Edge.)
 
+
+### p1
+
+- acceptance testing with phantomjs or what not (just need one. hit page -> click first image -> check that lightbox is shown)
 
 
 
