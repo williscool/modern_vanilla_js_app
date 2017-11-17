@@ -56,10 +56,11 @@ class LightBox {
    * @memberof LightBox
    */
   arrowsOrChildren(target) {
-    let ret = false;
-    ret = target !== this.$lbLeftArrow || target !== this.$lbRightArrow;
-    ret = [...this.$lbLeftArrow.children].includes(target) || [...this.$lbRightArrow.children].includes(target);
-    return ret;
+    const targetOneOfTheArrows = target === this.$lbLeftArrow || target === this.$lbRightArrow;
+
+    // eslint-disable-next-line max-len
+    const targetAnArrowsChild = [...this.$lbLeftArrow.children].includes(target) || [...this.$lbRightArrow.children].includes(target);
+    return targetOneOfTheArrows || targetAnArrowsChild;
   }
 
   /**

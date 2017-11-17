@@ -59,10 +59,25 @@ class Store {
 
     headers.append('Authorization', 'Client-ID b7f353f0e1406c19568e23283e786d628a3c176a450757a506aa64ae769ac8a4');
 
+    let apiString = '';
+    let doEdgeFix = false;
+
+    if (!url.searchParams) {
+      // Edge doesn't have searchparams on the url object
+      // and I dont have time to properly pollyfill it in there
+      url.searchParams = new URLSearchParams();
+      doEdgeFix = true;
+    }
+
     url.searchParams.set('query', 'islands');
     url.searchParams.set('per_page', '15');
+    apiString = url.toString();
 
-    fetch(url.toString(), {
+    if (doEdgeFix) {
+      apiString = `${url.toString()}?${url.searchParams.toString()}`;
+    }
+
+    fetch(apiString, {
       method: 'GET',
       mode: 'cors',
       redirect: 'follow',
@@ -70,8 +85,15 @@ class Store {
     }).then(respObj => respObj.json()).then((payload) => {
       const newItems = payload.results.map((p, index) => {
         const szClasses = ['', 'item--medium', 'item--medium', 'item--full'];
+
+        let { location } = p.user;
+
+        if (location === null) {
+          location = 'Some island somewhere';
+        }
+
         return new Item({
-          imageUrl: p.urls.regular, desc: p.user.location, sizeClass: szClasses[index % szClasses.length],
+          imageUrl: p.urls.regular, desc: location, sizeClass: szClasses[index % szClasses.length],
         });
       });
       this.items = this.items.concat(newItems);

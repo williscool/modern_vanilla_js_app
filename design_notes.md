@@ -2,15 +2,16 @@
 
 ## p0
 
-- wire up fetch to the api (maybe put this part of the app in an app folder)
-- Update the UI of a page without refreshing (first just add more on load, then if it takes less than 10 make a see more)
-- make all selectors constants pass the constants into the html builder config
 - cross browser testing (Your submission must run without errors in the latest versions of Chrome, Safari, Firefox, and Edge.)
+- make all selectors constants pass the constants into the html builder config
 
 ## p1
 
 - acceptance testing with phantomjs or what not (just need one. hit page -> click first image -> check that lightbox is shown)
+
 - get deployment working (prod build assets and host them on some static asset place)  (need to send them it hosted. delete this though)
+
+- test safari
 
   ​
 
@@ -75,6 +76,8 @@ there are a good other clarifying questions I would ask if this were a large app
 - Build a polished user experience you'd be proud to ship  (from the UI side)
 - photos from an api (hard code to something pretty like islands "", maybe use graphql make that p1 if it takes more than15 mins to figure out)  
 - unit testing ( try adding flow typing at this stage if you can get it working in less than 10 mins)
+- wire up fetch to the api (maybe put this part of the app in an app folder)
+- Update the UI of a page without refreshing (first just add more on load, then if it takes less than 10 make a see more)
 
 
 

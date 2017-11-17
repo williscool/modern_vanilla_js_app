@@ -12,6 +12,7 @@ import { isProd } from './src/util';
 export default {
   entry: [
     'babel-polyfill',
+    'url-search-params-polyfill',
     './src',
   ],
   output: {
