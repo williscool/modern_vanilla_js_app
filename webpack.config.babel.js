@@ -5,6 +5,7 @@ import { WDS_PORT,
   STATIC_PATH,
   APP_NAME,
   APP_CONTAINER_CLASS,
+  WDS_HOST,
 } from './src/config';
 
 import { isProd } from './src/util';
@@ -53,6 +54,7 @@ export default {
     extensions: ['.js'],
   },
   devServer: {
+    host: WDS_HOST,
     port: WDS_PORT,
   },
 };
